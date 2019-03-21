@@ -14,7 +14,7 @@ $(function () {
     Morris.Area({
         element: 'morris-area-chart'
         , data: [{
-                period: '2009'
+                period: '2010'
                 , iphone: 65
                 , ipad: 77
                 , itouch: 7
