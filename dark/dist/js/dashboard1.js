@@ -14,38 +14,12 @@ $(function () {
     Morris.Area({
         element: 'morris-area-chart'
         , data: [{
-                period: '2010'
-                , iphone: 65
-                , ipad: 77
+                period: '0'
+                , iphone: 0
+                , ipad: 244
                 , itouch: 7
         }, {
-                period: '2011'
-                , iphone: 130
-                , ipad: 100
-                , itouch: 80
-        }, {
-                period: '2012'
-                , iphone: 80
-                , ipad: 60
-                , itouch: 70
-        }, {
-                period: '2013'
-                , iphone: 70
-                , ipad: 200
-                , itouch: 140
-        }, {
-                period: '2014'
-                , iphone: 180
-                , ipad: 150
-                , itouch: 140
-        }, {
-                period: '2015'
-                , iphone: 105
-                , ipad: 100
-                , itouch: 80
-        }
-            , {
-                period: '2016'
+                period: '244'
                 , iphone: 250
                 , ipad: 150
                 , itouch: 200
