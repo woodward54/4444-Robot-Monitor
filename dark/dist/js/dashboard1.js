@@ -14,10 +14,10 @@ $(function () {
     Morris.Area({
         element: 'morris-area-chart'
         , data: [{
-                period: '2010'
-                , iphone: 50
-                , ipad: 80
-                , itouch: 20
+                period: '2009'
+                , iphone: 65
+                , ipad: 77
+                , itouch: 7
         }, {
                 period: '2011'
                 , iphone: 130
@@ -109,9 +109,9 @@ $(function () {
         , lineColors: ['#b4becb', '#01c0c8']
         , resize: true
     });
-});    
+});
     // sparkline
-    var sparklineLogin = function() { 
+    var sparklineLogin = function() {
         $('#sales1').sparkline([20, 40, 30], {
             type: 'pie',
             height: '90',
@@ -126,10 +126,10 @@ $(function () {
             barSpacing: '10',
             barColor: '#25a6f7'
         });
-        
-    };    
+
+    };
     var sparkResize;
- 
+
         $(window).resize(function(e) {
             clearTimeout(sparkResize);
             sparkResize = setTimeout(sparklineLogin, 500);
