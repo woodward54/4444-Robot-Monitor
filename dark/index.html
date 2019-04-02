@@ -26,6 +26,8 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+    <script src="timer.js"> </script>
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -602,7 +604,7 @@
                                     <div class="d-flex no-block align-items-center">
                                         <div>
                                             <h3><i class="icon-screen-desktop"></i></h3>
-                                            <p class="text-muted">Mapping...</p>
+                                            <p class="text-muted">Robot's State</p>
                                         </div>
                                         <div class="ml-auto">
                                             <h2 class="counter text-primary"></h2>
@@ -625,11 +627,13 @@
                                 <div class="col-md-12">
                                     <div class="d-flex no-block align-items-center">
                                         <div>
-                                            <h3><i class="icon-note"></i></h3>
-                                            <p class="text-muted">Timer</p>
+                                            <h3><i class="icon-clock"></i></h3>
+                                            <p class="text-muted">Countdown Timer</p>
                                         </div>
                                         <div class="ml-auto">
-                                            <h2 class="counter text-cyan">5:45</h2>
+                                            <p id="time">06:00 </p>
+                                            <!-- <h2 class="counter text-cyan">6:00</h2> -->
+                                            <!-- <div><span id="time">06:00</span></div> -->
                                         </div>
                                     </div>
                                 </div>
