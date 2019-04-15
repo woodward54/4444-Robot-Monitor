@@ -1,26 +1,18 @@
-function count_down(duration, display)
+
+function progress(timeleft, timetotal, $element)
 {
-  var timer = duration, minutes, seconds;
-  setInterval(function ()
-  {
-    minutes = parseInt(timer / 60, 10)
-    seconds = parseInt(timer % 60, 10);
-
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-
-    display.textContent = minutes + ":" + seconds;
-
-    if (--timer < 0)
+    var progressBarWidth = timeleft * $element.width() / timetotal;
+    $element
+        .find('div')
+        .animate({ width: progressBarWidth }, 500)
+        .html(timeleft + " seconds to go");
+    if(timeleft > 0)
     {
-      timer = duration;
+        setTimeout(function()
+        {
+            progress(timeleft - 1, timetotal, $element);
+        }, 1000);
     }
-  }, 1000);
-}
-
-window.onload = function ()
-{
-  var sixMinutes = 60 * 6,
-  display = document.querySelector('#time');
-  count_down(sixMinutes, display);
 };
+
+progress(180, 180, $('#progressBar'));
