@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title id="title">System Monitor</title>
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+
+  <body style="background-color: #3A3C3E;">
+
+    <canvas id="layer0" style="z-index: 0;"></canvas>
+    <canvas id="layer1" style="z-index: 1;"></canvas>
+
+
+    <div class="grid-container">
+      <div class="grid-item-a">Robot System Monitor</div>
+      <div class="grid-item-b">2</div>
+      <div class="grid-item-c">3</div>
+      <div class="grid-item-d">9</div>
+    </div>
+
+  <div id="Header" class="panel header" style=''>
+    <h1>Robot System Monitor</h1>
+  </div>
+
+  <canvas id="layer2" style="z-index: 3; pointer-events:none;">Something went wrong! Use Google Chrome on a Desktop or Laptop for the best experience.</canvas>
+
+    <script src="js/canvas.js"></script>
+  </body>
+</html>

@@ -1,0 +1,275 @@
+html {
+    font-family: helvetica, serif;
+    color: white;
+}
+html, body {
+    margin: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+canvas {
+
+}
+ul {
+  font-size: .9em;
+  margin: 0px;
+  padding: 5px 0 5px 20px;
+}
+/*#container {
+  position: relative;
+}
+
+#container canvas, #overlay {
+  position: absolute;
+}*/
+
+/* GRID */
+
+.grid-item-a {
+  grid-area: header;
+}
+.grid-item-b {
+  grid-area: main;
+}
+.grid-item-c {
+  grid-area: sidebar;
+}
+.grid-item-d {
+  grid-area: footer;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 20px 20px;
+  grid-template-columns: 50px 50px 50px 50px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+}
+
+
+.overlay {
+    height:0px;
+    overflow:visible;
+    pointer-events:none;
+    background:none !important;
+}
+
+.projects {
+  font-family: 'Source Sans Pro';
+  font-size: 1.3em;
+  z-index: 2;
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 1000px;
+  margin-top: -375px;
+  margin-left: -480px;
+  background: rgba(66, 134, 244, .34);
+  padding: 15px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.img2 img {
+  width: 75%;
+  padding-left: 13%;
+}
+.fixheight {
+  max-height: 13.5em;
+}
+
+
+.invert {
+  position: absolute;
+  font-family: 'Source Sans Pro';
+  font-size: 1.3em;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+}
+
+.invert h1 {
+  font-size: 1.3em;
+  font-weight: 600;
+  text-align: center;
+  mix-blend-mode: difference;
+}
+
+.left {
+  left: 4%;
+  margin-left: 0;
+}
+
+.right {
+  left: 56%;
+  margin-left: 0;
+}
+
+/*
+.projects p {
+  font-weight: 400;
+  font-size: .8em;
+  margin-bottom: 16px;
+  text-align: center;
+  line-height: 1.3em;
+  clear: both;
+}
+.projects h1 {
+  font-size: 1.4em;
+  font-weight: 700;
+  text-align: center;
+}
+
+*/
+.panel {
+  position: absolute;
+  font-family: 'Source Sans Pro';
+  font-size: 1.3em;
+
+
+  background: rgba(238, 238, 238, .84);
+  color: #000;
+  padding: 20px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.header {
+  margin-top: -200px;
+  margin-left: -200px;
+
+  /* position - CSS grid? */
+  top: 30%;
+  left: 50%;
+
+  width: 425px;
+}
+
+.panel h1 {
+    font-size: 1.4em;
+    font-weight: 700;
+    float: left;
+    color: #222;
+    margin: 2px 0px 2.5px 35px;
+}
+
+.panel h2 {
+  font-size: .8em;
+  font-weight: 400;
+  float: left;
+  margin: 0px 0px 30px 35px;
+}
+
+.panel p {
+    font-weight: 400;
+    font-size: .8em;
+    margin-bottom: 16px;
+    text-align: center;
+    line-height: 1.3em;
+    clear: both;
+}
+
+.profile {
+  border-radius: 50%;
+  width: 25%;
+  position: relative;
+  float: left;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  /*padding: 0 4px;*/
+  z-index: 2;
+}
+
+.hover {
+  opacity: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  text-align: left;
+  transition:all 0.6s ease;
+  background-color: rgba(19, 21, 22, .82);
+}
+
+.column:hover img {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.column img {
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  max-width: 100%;
+  transition: all 0.3s;
+}
+
+.hover:hover {
+  opacity: 1;
+}
+.hover h1 {
+  font-size: 1em;
+  font-weight: 700;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.hover p {
+  font-weight: 400;
+  font-size: .8em;
+  margin-bottom: 16px;
+  line-height: 1.3em;
+  clear: both;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.projects a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  /*max-width: 25%;*/
+  width: 200px;
+  /*padding: 0 4px;*/
+  position: relative;
+  overflow: hidden;
+}
+
+.column img {
+  /*margin-top: 8px;*/
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
