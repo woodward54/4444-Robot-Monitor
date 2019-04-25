@@ -1,68 +1,43 @@
-<!-- Temporarily using a button to increment the block count -->
-<!-- by one each time it is clicked, will change later -->
 <!DOCTYPE html>
-
 <html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<style>
-  #progressbar
-  {
-    background-color: green;
-  }
+  <head>
+    <meta charset="utf-8">
+    <title id="title">System Monitor</title>
+    <style type="text/css">
 
-  #progressbar>div
-  {
-    background-color: lightgray;
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
 
-    width: 0%;
-    height: 20px;
-  }
+  <body style="background-color: #3A3C3E;">
 
-</style>
+    <canvas id="layer0" style="z-index: 0;"></canvas>
+    <canvas id="layer1" style="z-index: 1;"></canvas>
 
-<script>
-window.onload = () =>
-{
 
-  min = 5;
-  sec = 59;
-  total = 6 * 60;
+    <div class="grid-container">
+      <div class="grid-item-a">Robot System Monitor</div>
+      <div class="grid-item-b">2</div>
+      <div class="grid-item-c">3</div>
+      <div class="grid-item-d">9</div>
+    </div>
 
-  var timer = setInterval(() =>
-  {
-    sec--;
-    index = Math.floor(Math.random() * 7);
+  <div id="Header" class="panel header" style=''>
+    <h1>Robot System Monitor</h1>
+  </div>
 
-    if (sec === 0 && min == 0)
-    {
-      clearInterval(timer);
-    }
-    else if (sec === 0)
-    {
-      sec = 59;
-      min--;
-    }
+  <canvas id="layer2" style="z-index: 3; pointer-events:none;">Something went wrong! Use Google Chrome on a Desktop or Laptop for the best experience.</canvas>
 
-    document.getElementById("time").innerText = ("0" + (min || 0)).slice(-2) + ":" + ("0" + (sec || 0)).slice(-2);
-
-    var count = 100 - (((min * 60) + sec) / total * 100);
-
-    document.getElementById("bar").style.width = count + "%";
-
-  }, 1000);
-
-}
-
-</script>
-</head>
-<body>
-<span id="time"></span>
-
-<div id="progressbar">
-<div id="bar"></div>
-
-</div>
-</body>
+    <script src="js/canvas.js"></script>
+  </body>
 </html>
