@@ -33,43 +33,61 @@ ul {
 }
 .grid-item-timer {
   grid-area: timer;
+  background-color: black;
 }
 .grid-item-map {
   grid-area: map;
-  background: rgba(66, 134, 244, .34);
+  background-color: purple;
 }
 .grid-item-us1 {
   grid-area: us1;
+  background-color: blue;
 }
 .grid-item-us2 {
   grid-area: us2;
+  background-color: blue;
 }
 .grid-item-us3 {
   grid-area: us3;
+  background-color: blue;
 }
 .grid-item-us4 {
   grid-area: us4;
+  background-color: blue;
 }
 .grid-item-us5 {
   grid-area: us5;
+  background-color: blue;
 }
 .grid-item-us6 {
   grid-area: us6;
+  background-color: blue;
 }
 .grid-item-us7 {
   grid-area: us7;
+  background-color: blue;
 }
 .grid-item-lidar {
   grid-area: lidar;
+  background-color: blue;
+}
+.grid-item-speed {
+  grid-area: speed;
 }
 .grid-item-footer {
   grid-area: footer;
 }
 
 .grid-container {
+  color: white;
+  font-size: 2rem;
+  font-family: helvetica, arial;
+  font-weight: 200;
+  text-align: center;
+
   display: grid;
-  grid-gap: 20px 20px;
-  grid-template-columns: 200px 200px 200px 200px;
+  grid-gap: 3% 1.25%;
+  grid-template-columns: 24% 24% 24% 24%;
   grid-template-rows: auto;
   grid-template-areas:
     "header header header header"
@@ -82,6 +100,7 @@ ul {
     "map map us6 us6"
     "map map us7 us7"
     "map map lidar lidar"
+    "speed . . ."
     "footer footer footer footer";
 }
 
@@ -93,7 +112,8 @@ ul {
   transform: translate(-50%, -50%);
 
   margin: auto;
-  width: auto;
+  width: 95%;
+  height: 90%;
   border: 3px solid green;
   padding: 10px;
 }
