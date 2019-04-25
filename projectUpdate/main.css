@@ -28,30 +28,75 @@ ul {
 
 /* GRID */
 
-.grid-item-a {
+.grid-item-header {
   grid-area: header;
 }
-.grid-item-b {
-  grid-area: main;
+.grid-item-timer {
+  grid-area: timer;
 }
-.grid-item-c {
-  grid-area: sidebar;
+.grid-item-map {
+  grid-area: map;
+  background: rgba(66, 134, 244, .34);
 }
-.grid-item-d {
+.grid-item-us1 {
+  grid-area: us1;
+}
+.grid-item-us2 {
+  grid-area: us2;
+}
+.grid-item-us3 {
+  grid-area: us3;
+}
+.grid-item-us4 {
+  grid-area: us4;
+}
+.grid-item-us5 {
+  grid-area: us5;
+}
+.grid-item-us6 {
+  grid-area: us6;
+}
+.grid-item-us7 {
+  grid-area: us7;
+}
+.grid-item-lidar {
+  grid-area: lidar;
+}
+.grid-item-footer {
   grid-area: footer;
 }
 
 .grid-container {
   display: grid;
   grid-gap: 20px 20px;
-  grid-template-columns: 50px 50px 50px 50px;
+  grid-template-columns: 200px 200px 200px 200px;
   grid-template-rows: auto;
   grid-template-areas:
     "header header header header"
-    "main main . sidebar"
+    "timer timer timer timer"
+    "map map us1 us1"
+    "map map us2 us2"
+    "map map us3 us3"
+    "map map us4 us4"
+    "map map us5 us5"
+    "map map us6 us6"
+    "map map us7 us7"
+    "map map lidar lidar"
     "footer footer footer footer";
 }
 
+.grid-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+
+  margin: auto;
+  width: auto;
+  border: 3px solid green;
+  padding: 10px;
+}
 
 .overlay {
     height:0px;
