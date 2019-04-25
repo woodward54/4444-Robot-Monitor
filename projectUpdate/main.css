@@ -74,6 +74,9 @@ ul {
 .grid-item-speed {
   grid-area: speed;
 }
+.grid-item-blocks {
+  grid-area: blocks;
+}
 .grid-item-footer {
   grid-area: footer;
 }
@@ -100,7 +103,7 @@ ul {
     "map map us6 us6"
     "map map us7 us7"
     "map map lidar lidar"
-    "speed . . ."
+    "speed blocks . ."
     "footer footer footer footer";
 }
 
