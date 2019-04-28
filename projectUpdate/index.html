@@ -95,7 +95,21 @@
 			<canvas class="Rmap"></canvas>
             hello this is the map
         </div>
-        <div class="grid-item-us1">[US1] TEST</div>
+        <div class="grid-item-us1">[US1] TEST
+          <progress id="myProgress" value="0" max="100">
+          </progress>
+
+          <p>Click the button to change the value of the value attribute of the progress bar to "75".</p>
+
+          <button onclick="myFunction(70)">Try it</button>
+
+          <script>
+          function myFunction(num) {
+            document.getElementById("myProgress").value = num;
+           // num = num + 25;
+          }
+          </script>
+        </div>
         <div class="grid-item-us2">[US2] TEST69</div>
         <div class="grid-item-us3">[US3]</div>
         <div class="grid-item-us4">[US4]</div>
