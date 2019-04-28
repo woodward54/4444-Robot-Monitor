@@ -16,7 +16,7 @@ function removeClass(index, this_class)
   }
 }
 
-function hightLight(letter)
+function highLight(letter)
 {
   var tds = document.getElementsById(letter)
 
