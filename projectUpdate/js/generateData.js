@@ -85,15 +85,17 @@ setInterval(function() {
   pause++
 
   // ultraSonics----------------------------------------
-  obj.ultraSonics.forEach(function(ultraSonic) {
+  for(i=0; i<obj.ultraSonics.length; i++) {
 
     if (randomIntFromRange(0,10) == 9) {
       // simulate object coming close
 
-      ultraSonic-= 0.1
+      obj.ultraSonics[i] += 1
     }
-  })
-  sernsors(obj.ultraSonics)
+    obj.ultraSonics[i] += 1
+  }
+
+  sensors(obj.ultraSonics)
 
   // BLOCKS----------------------------------------------
   if (randomIntFromRange(0, 100) == 99) {
