@@ -310,6 +310,14 @@ ul {
   text-decoration: inherit;
 }
 
+.Omap {
+	position: absolute;
+}
+
+.Rmap {
+	position: absolute;
+}
+
 /* Create four equal columns that sits next to each other */
 .column {
   flex: 25%;
