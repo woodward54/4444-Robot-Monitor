@@ -28,7 +28,68 @@
     <div class="grid-center">
       <div class="grid-container">
         <div class="grid-item-header">Robot System Monitor</div>
-        <div class="grid-item-timer">[TIMER]</div>
+        <div class="grid-item-timer">
+          <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <style>
+              #progressbar
+              {
+                background-color: green;
+              }
+
+              #progressbar>div
+              {
+                background-color: dimgray;
+
+                width: 0%;
+                height: 20px;
+              }
+
+            </style>
+
+            <script>
+            window.onload = () =>
+            {
+
+              min = 5;
+              sec = 59;
+              total = 6 * 60;
+
+              var timer = setInterval(() =>
+              {
+                sec--;
+                index = Math.floor(Math.random() * 7);
+
+                if (sec === 0 && min == 0)
+                {
+                  clearInterval(timer);
+                }
+                else if (sec === 0)
+                {
+                  sec = 59;
+                  min--;
+                }
+
+                document.getElementById("time").innerText = ("0" + (min || 0)).slice(-2) + ":" + ("0" + (sec || 0)).slice(-2);
+
+                var count = 100 - (((min * 60) + sec) / total * 100);
+
+                document.getElementById("bar").style.width = count + "%";
+
+              }, 1000);
+
+            }
+
+            </script>
+            </head>
+            <body>
+            <span id="time"></span>
+
+            <div id="progressbar">
+            <div id="bar"></div>
+
+            </div>
+          </div>
         <div class="grid-item-map">
 			<canvas class="Omap"></canvas>
 			<canvas class="Rmap"></canvas>
