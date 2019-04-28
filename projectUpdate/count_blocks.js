@@ -16,9 +16,9 @@ function removeClass(index, this_class)
   }
 }
 
-function hightLight()
+function hightLight(letter)
 {
-  var tds = document.getElementsByTagName("letter")
+  var tds = document.getElementsById("letter")
 
   for (let i = 0; i < tds.length; i++)
   {
