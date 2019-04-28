@@ -1,28 +1,30 @@
-// Counts the blocks as the robot picks them up
+index = 0;
 
-var counter = 0;
-
-function increase()
+function addClass(index, this_class)
 {
-  var counter_div = document.getElementById('counter');
-  counter_div.innerHTML = counter;
-
-  if (counter == 6)
+  if (index.classList)
   {
-     alert("All Blocks Have Been Retrieved");
-  }
-  else
-  {
-    counter_div.innerHTML = ++counter;
-    return false;
+    index.classList.add(this_class)
   }
 }
 
-function reset()
+function removeClass(index, this_class)
 {
-  counter_div = document.getElementById('counter');
-  counter = 0;
-  counter_div.innerHTML = 0;
+  if (index.classList)
+  {
+    index.classList.remove(this_class)
+  }
+}
 
-  return false;
+function hightLight()
+{
+  var tds = document.getElementsByTagName("letter")
+
+  for (let i = 0; i < tds.length; i++)
+  {
+  //	removeClass(tds[i], "highlight");
+  }
+
+  addClass(tds[index % 6], "highlight");
+  index++;
 }
