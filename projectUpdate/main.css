@@ -33,7 +33,7 @@ ul {
 }
 .grid-item-timer {
   grid-area: timer;
-  background-color: black;
+  background-color: #3A3C3E;
 }
 .grid-item-map {
   grid-area: map;

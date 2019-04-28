@@ -21,20 +21,129 @@
 
   <body style="background-color: #3A3C3E;">
 
-    <canvas id="layer0" style="z-index: 0;"></canvas>
-    <canvas id="layer1" style="z-index: 1;"></canvas>
+    <!-- <canvas id="layer0" style="z-index: 0;"></canvas>
+    <canvas id="layer1" style="z-index: 1;"></canvas> -->
 
 
-    <div class="grid-container">
-      <div class="grid-item-a">Robot System Monitor</div>
-      <div class="grid-item-b">2</div>
-      <div class="grid-item-c">3</div>
-      <div class="grid-item-d">9</div>
+    <div class="grid-center">
+      <div class="grid-container">
+        <div class="grid-item-header">Robot System Monitor</div>
+        <div class="grid-item-timer">
+          <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <style>
+            #progressbar
+            {
+              background-color: green;
+            }
+
+            #progressbar>div
+            {
+              background-color: dimgray;
+
+              width: 0%;
+              height: 20px;
+            }
+
+          </style>
+
+          <script>
+          window.onload = () =>
+          {
+
+            min = 5;
+            sec = 59;
+            total = 6 * 60;
+
+            var timer = setInterval(() =>
+            {
+              sec--;
+              index = Math.floor(Math.random() * 7);
+
+              if (sec === 0 && min == 0)
+              {
+                clearInterval(timer);
+              }
+              else if (sec === 0)
+              {
+                sec = 59;
+                min--;
+              }
+
+              document.getElementById("time").innerText = ("0" + (min || 0)).slice(-2) + ":" + ("0" + (sec || 0)).slice(-2);
+
+              var count = 100 - (((min * 60) + sec) / total * 100);
+
+              document.getElementById("bar").style.width = count + "%";
+
+            }, 1000);
+
+          }
+
+          </script>
+          </head>
+          <body>
+          <span id="time"></span>
+
+          <div id="progressbar">
+          <div id="bar"></div>
+
+          </div>
+        </div>
+        <div class="grid-item-map">
+            hello this is the map
+        </div>
+        <div class="grid-item-us1">[US1]</div>
+        <div class="grid-item-us2">[US2]</div>
+        <div class="grid-item-us3">[US3]</div>
+        <div class="grid-item-us4">[US4]</div>
+        <div class="grid-item-us5">[US5]</div>
+        <div class="grid-item-us6">[US6]</div>
+        <div class="grid-item-us7">[US7]</div>
+        <div class="grid-item-lidar">[LIDAR]</div>
+        <div class="grid-item-speed">[SPEED]</div>
+        <div class="grid-item-blocks">
+          <script>
+          var counter = 0;
+
+          function increase(){
+          var counter_div = document.getElementById('counter');
+          counter_div.innerHTML = counter;
+
+          if(counter==6){
+             alert("Max number reached");
+          }
+          else{
+          counter_div.innerHTML = ++counter;
+          return false;
+          }
+          }
+          function reset()
+          {
+          counter_div = document.getElementById('counter');
+          counter=0;
+          counter_div.innerHTML = 0;
+          return false;
+          }
+
+          </script>
+          <title>Counter</title>
+          </head>
+          <body>
+          <div id="counter">0</div>
+          <button onclick="increase()">Increase</button>
+          <button onclick="reset()">Reset</button>
+
+          </body>
+        </div>
+        <div class="grid-item-footer">[FOOTER]</div>
+      </div>
     </div>
 
-  <div id="Header" class="panel header" style=''>
+
+  <!-- <div id="Header" class="panel header" style=''>
     <h1>Robot System Monitor</h1>
-  </div>
+  </div> -->
 
   <canvas id="layer2" style="z-index: 3; pointer-events:none;">Something went wrong! Use Google Chrome on a Desktop or Laptop for the best experience.</canvas>
 
