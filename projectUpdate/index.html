@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src = "count_blocks.js"> </script>
     <meta charset="utf-8">
     <title id="title">System Monitor</title>
     <style type="text/css">
@@ -108,7 +107,7 @@
         <div class="grid-item-us1">[US1]
           <progress id="myProgress" value="50" max="100">
           </progress>
-          <script src="progBar.js"></script>
+
         </div>
         <div class="grid-item-us2">[US2] TEST69</div>
         <div class="grid-item-us3">[US3]</div>
@@ -120,12 +119,21 @@
         <div class="grid-item-speed">[SPEED]</div>
         <div class="grid-item-blocks">
 
+<<<<<<< HEAD
   					<letter>A</letter>
   					<letter>B</letter>
   					<letter>C</letter>
   					<letter>D</letter>
             <letter>E</letter>
   					<letter>F</letter>
+=======
+  					<letter id="A">A</letter>
+  					<letter id="B">B</letter>
+  					<letter id="C">C</letter>
+  					<letter id="D">D</letter>
+            <letter id="E">E</letter>
+  					<letter id="F">F</letter>
+>>>>>>> f519b0f6dcd5b70d9cdba3e6366beb8d440ca103
 
 
 
@@ -142,6 +150,8 @@
   <canvas id="layer2" style="z-index: 3; pointer-events:none;">Something went wrong! Use Google Chrome on a Desktop or Laptop for the best experience.</canvas>
 
     <script src="js/canvas.js"></script>
-    <script src="js/generateJSON.js"></script>
+    <script src="js/generateData.js"></script>
+    <script src="count_blocks.js"> </script>
+    <script src="progBar.js"></script>
   </body>
 </html>
