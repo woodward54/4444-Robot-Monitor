@@ -1,4 +1,4 @@
-function sensor1(num) {
-  document.getElementById("myProgress").value = num;
- // num = num + 25;
+function sensors(num[]) {
+  document.getElementById("myProgress1").value = num[0];
+  document.getElementById("myProgress2").value = num[1];
 }
