@@ -18,15 +18,17 @@ var obj = {
    obstacles = [],
    motherShip = [0,0]
 
-   for (i=0; i<6; i++) {
-     cubes.push(new cube())
-   }
 
-   for (i=0; i<15; i++) {
-     obstacles.push(new obstacle())
-   }
 
 };
+
+for (i=0; i<6; i++) {
+  obj.cubes.push(new cube())
+}
+
+for (i=0; i<15; i++) {
+  obj.obstacles.push(new obstacle())
+}
 
 setInterval(function() {
   // method to be executed;
