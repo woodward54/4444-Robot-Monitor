@@ -23,8 +23,7 @@ function obstacle() {
 
 var obj = {
    speed: 0,
-   ultraSonics: [0,0,0,0,0,0,0],
-   lidar: 0,
+   ultraSonics: [0,0,0,0,0,0,0,0],
 
    cubes: [],
    obstacles: [],
@@ -94,6 +93,7 @@ setInterval(function() {
       ultraSonic-= 0.1
     }
   })
+  sernsors(obj.ultraSonics)
 
   // BLOCKS----------------------------------------------
   if (randomIntFromRange(0, 100) == 99) {
