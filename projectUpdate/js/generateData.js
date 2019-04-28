@@ -104,10 +104,8 @@ setInterval(function() {
       obj.cubes[choice].pickedUp = true
       obj.cubes[choice].x = 0
       obj.cubes[choice].y = 0
+      highLight(obj.cubes[choice].name)
     }
   }
-
-
-
 
 }, 200);
