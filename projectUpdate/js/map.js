@@ -1,5 +1,5 @@
 function mapObs(){
-	var canvas = document.getElementsByClassName("map");
+	var canvas = document.getElementsByClassName("Omap");
 	var ctx = canvas.getContext("2d");//create drawing object
 	var Ox,Oy,type,Bear;//x position of obstacle, y position of obstacle, type of obstacle,
 	
@@ -23,12 +23,12 @@ function mapObs(){
 
 function mapRob(x,y,Bear)
 {
-	var canvas = document.getElementsByClassName("mapRob");
+	var canvas = document.getElementsByClassName("Rmap");
 	var ctx = canvas.getContext("2d");
 	ctx.setTransform(1,0,0,1,0,0);//reset transformation
 	ctx.clearRect(0,0,canvas.width,canvas.height);
 	ctx.fillColor = "#FFFFFF";//set color to white
-	ctx.translate(x,y);//move the canvas over
+	ctx.translate(x-(canvas.width)/2,y-(canvas.height/2));//move the canvas over
 	ctx.rotate(Bear);//rotate to new robot bearing
-	ctx.fillRect(0,0,10,10);//fill in new robot position
+	ctx.fillRect((canvas.width/2)-5,(canvas.height/2)-5,10,10);//fill in new robot position
 }

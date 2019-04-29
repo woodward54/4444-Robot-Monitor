@@ -311,11 +311,18 @@ ul {
 }
 
 .Omap {
+	z-index: 5;
 	position: absolute;
+	left: 0px;
+	top: 0px;
 }
 
 .Rmap {
+	z-index: 6;
 	position: absolute;
+	position: absolute;
+	left: 0px;
+	top: 0px;
 }
 
 /* Create four equal columns that sits next to each other */
