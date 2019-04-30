@@ -1,5 +1,5 @@
 const ARENASIZE = 400
-const USMAX = 100
+const USMAX = 2
 
 
 function randomIntFromRange(min, max) {
@@ -93,21 +93,26 @@ setInterval(function() {
     if (randomIntFromRange(0,500) == 9 && usState[i] == 0) {
       // simulate object coming close
       usState[i] = -1
-      obj.ultraSonics[i] -= randomIntFromRange(10,30)
+      obj.ultraSonics[i] -= randomIntFromRange(0.2,0.6)
     }
 
     if (usState[i] == 1) {
-      obj.ultraSonics[i] += randomFloatFromRange(1,3)
+      obj.ultraSonics[i] += randomFloatFromRange(0.02, 0.06)
     } else if (usState[i] == -1) {
-      obj.ultraSonics[i] -= randomFloatFromRange(1,2)
+      obj.ultraSonics[i] -= randomFloatFromRange(0.02, 0.04)
     }
+
+    // round
+    obj.ultraSonics[i] = obj.ultraSonics[i].toFixed(3)
 
     if (obj.ultraSonics[i] >= USMAX) {
       usState[i] = 0
     }
-    if (obj.ultraSonics[i] <= 40) {
+    if (obj.ultraSonics[i] <= 0.8) {
       usState[i] = 1
     }
+
+
   }
 
   sensors(obj.ultraSonics)
