@@ -10,17 +10,15 @@ var Cubectx = Cubecanvas.getContext("2d");
 var Mothercanvas = document.getElementById("Mmap");
 var Motherctx = Mothercanvas.getContext("2d");
 
-var functest = 10;
-
 function fillObstacles(){
 	var i;
+	try{
 	for(i=0;i<15;i++)
 	{
 		Octx.fillStyle = "#FF0000";//set color to red
-		var x = obj.obstacles[i].x;
-		var y = obj.obstacles[i].y;
-		Octx.fillRect(x,y,6,6);//fill here
+		Octx.fillRect(obj.obstacles[i]().x,obj.obstacles[i]().y,6,6);//fill here
 	}
+	}catch(err){window.alert("obstacles painting error.");
 }
 
 /*function fillCubes(){
