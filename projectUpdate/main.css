@@ -37,7 +37,8 @@ ul {
 }
 .grid-item-map {
   grid-area: map;
-  background-color: purple;
+  position: relative;
+  background-color: black;
 }
 .grid-item-us1 {
   grid-area: us1;
@@ -310,19 +311,14 @@ ul {
   text-decoration: inherit;
 }
 
-.Omap {
-	z-index: 5;
+.MAP {
 	position: absolute;
-	left: 0px;
 	top: 0px;
-}
-
-.Rmap {
-	z-index: 6;
-	position: absolute;
-	position: absolute;
-	left: 0px;
-	top: 0px;
+	left: 12.5%;
+	height: 100%;
+	width: 75%;
+	border-right: 2px solid white;
+	border-left: 2px solid white;
 }
 
 /* Create four equal columns that sits next to each other */

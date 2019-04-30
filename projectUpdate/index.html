@@ -91,18 +91,16 @@
 
             </script>
             </head>
-            <body>
             <span id="time"></span>
-
             <div id="progressbar">
-            <div id="bar"></div>
-
+				<div id="bar"></div>
             </div>
           </div>
-        <div class="grid-item-map" style="position: relative;">
-			<canvas class="Omap"></canvas>
-			<canvas class="Rmap"></canvas>
-            hello this is the map
+        <div class="grid-item-map">
+			<canvas id="Omap" class = "MAP"></canvas>
+			<canvas id="Rmap" class = "MAP"></canvas>
+			<canvas id="Cmap" class = "MAP"></canvas>
+			<canvas id="Mmap" class = "MAP"></canvas>
         </div>
         <div class="grid-item-us1">[US1]
           <progress id="myProgress1" value="50" max="100">
@@ -137,7 +135,7 @@
           <progress id="myProgress8" value="0" max="100">
           </progress>
         </div>
-        <div class="grid-item-speed">[SPEED]
+        <div class="grid-item-speed" id="speed">[SPEED]
         </div>
         <div class="grid-item-blocks">
 
@@ -159,11 +157,10 @@
   </div> -->
 
   <canvas id="layer2" style="z-index: 3; pointer-events:none;">Something went wrong! Use Google Chrome on a Desktop or Laptop for the best experience.</canvas>
-
     <script src="js/canvas.js"></script>
     <script src="count_blocks.js"> </script>
     <script src="progBar.js"></script>
-	<script src="js/maptest.js"></script>
     <script src="js/generateData.js"></script>
+	<script src="js/maptest.js"></script>
   </body>
 </html>

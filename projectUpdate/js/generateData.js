@@ -59,10 +59,11 @@ setInterval(function() {
     // speed up and down
     if (goingUp) {
       // meters per second
-      obj.speed += randomFloatFromRange(0.08, 0.12)
+      obj.speed += randomFloatFromRange(0.08, 0.12);
     } else {
       obj.speed -= randomFloatFromRange(0.08, 0.12)
     }
+	document.getElementById("speed").innerHTML = obj.speed.totoFixed(3).concat("m/s");
     if (obj.speed >= 1.0) {
       goingUp = false
     }
