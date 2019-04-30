@@ -63,7 +63,7 @@ setInterval(function() {
     } else {
       obj.speed -= randomFloatFromRange(0.08, 0.12)
     }
-	document.getElementById("speed").innerHTML = obj.speed.totoFixed(3).concat("m/s");
+	document.getElementById("speed").innerHTML = obj.speed.totoFixed(3).concat("m/s");//pushes to html doc
     if (obj.speed >= 1.0) {
       goingUp = false
     }
