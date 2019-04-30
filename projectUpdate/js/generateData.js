@@ -103,8 +103,7 @@ setInterval(function() {
       obj.ultraSonics[i] -= randomFloatFromRange(0.02, 0.04)
     }
 
-    // round
-    obj.ultraSonics[i] = obj.ultraSonics[i].toFixed(2)
+    obj.ultraSonics[i] = Math.round(obj.ultraSonics[i] * 100) / 100;
 
     if (obj.ultraSonics[i] >= USMAX) {
       usState[i] = 0
