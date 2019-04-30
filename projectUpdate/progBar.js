@@ -7,4 +7,5 @@ function sensors(num) {
   document.getElementById("myProgress6").value = num[5];
   document.getElementById("myProgress7").value = num[6];
   document.getElementById("myProgress8").value = num[7];
+  document.getElementById("val1").innerHTML = num[0];
 }
