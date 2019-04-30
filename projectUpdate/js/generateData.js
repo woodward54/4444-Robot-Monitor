@@ -1,5 +1,6 @@
 const ARENASIZE = 400
 const USMAX = 2
+const PADDING = 15
 
 
 function randomIntFromRange(min, max) {
@@ -32,8 +33,8 @@ var obj = {
 };
 
 for (i=0; i<6; i++) {
-  x = randomIntFromRange(0, ARENASIZE)
-  y = randomIntFromRange(0, ARENASIZE)
+  x = randomIntFromRange(PADDING, ARENASIZE-PADDING)
+  y = randomIntFromRange(PADDING, ARENASIZE-PADDING)
   obj.cubes.push(new cube(x, y, 'U', false))
 }
 obj.cubes[0].name = 'A'
@@ -44,8 +45,8 @@ obj.cubes[4].name = 'E'
 obj.cubes[5].name = 'F'
 
 for (i=0; i<15; i++) {
-  x = randomIntFromRange(0, ARENASIZE)
-  y = randomIntFromRange(0, ARENASIZE)
+  x = randomIntFromRange(PADDING, ARENASIZE-PADDING)
+  y = randomIntFromRange(PADDING, ARENASIZE-PADDING)
   obj.obstacles.push(new obstacle(x, y))
 }
 
