@@ -103,7 +103,7 @@ setInterval(function() {
     }
 
     // round
-    obj.ultraSonics[i] = obj.ultraSonics[i].toFixed(3)
+    obj.ultraSonics[i] = obj.ultraSonics[i].toFixed(2)
 
     if (obj.ultraSonics[i] >= USMAX) {
       usState[i] = 0
