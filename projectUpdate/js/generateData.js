@@ -27,6 +27,7 @@ var obj = {
    robotLocation: [ARENASIZE/2,ARENASIZE/2],
    cubes: [],
    obstacles: [],
+   heading: 0,
    motherShip: [randomIntFromRange(0, ARENASIZE),randomIntFromRange(0, ARENASIZE)]
 };
 

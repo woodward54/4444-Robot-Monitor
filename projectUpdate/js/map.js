@@ -11,14 +11,15 @@ var Mothercanvas = document.getElementById("Mmap");
 var Motherctx = Mothercanvas.getContext("2d");
 
 function fillObstacles(){
-	var i;
-	try{
+	let i;
+	//try{
+	Octx.fillStyle = "#FF0000";//select color
 	for(i=0;i<15;i++)
 	{
-		Octx.fillStyle = "#FF0000";//set color to red
-		Octx.fillRect(obj.obstacles[i]().x,obj.obstacles[i]().y,6,6);//fill here
+		Octx.fillRect(obj.obstacles[i].x,obj.obstacles[i].y,6,6);//fill here
+		//window.alert();
 	}
-	}catch(err){window.alert("obstacles painting error.");
+	//}catch(err){window.alert("obstacles painting error.");
 }
 
 /*function fillCubes(){
