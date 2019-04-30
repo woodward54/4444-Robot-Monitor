@@ -4,7 +4,7 @@ function fillObstacles(){
 	for(i=0;i<15;i++)
 	{
 		Octx.fillColor = "#FF0000";//set color to red
-		Octx.fillRect(distConvertX *obj.obstacles[i].x-3,obj.obstacles[i].y-3,6,6);//fill here
+		Octx.fillRect(i * 10 + 40,i * 10 + 40,6,6);//fill here
 	}
 }
 
@@ -16,14 +16,13 @@ function fillCubes(){
 	}
 }
 
-function drawMothership(obj,Mctx){
+function drawMothership(){
 	Mctx.fillColor = "#00FFFF";//set color to teal
 	Mctx.fillRect(distConvertX * obj.motherShip[0]-6,obj.motherShip[1]-6,12,12);//fill rectangle
 }
 
 function Robotstep()
 {
-
 	Rctx.setTransform(1,0,0,1,0,0);//reset transformation
 	Rctx.clearRect(0,0,Robocanvas.width,Robocanvas.height);
 	Rctx.fillColor = "#FFFFFF";//set color to white
@@ -32,9 +31,9 @@ function Robotstep()
 	Rctx.fillRect((Robocanvas.width/2)-5,(Robocanvas.height/2)-5,10,10);//fill in new robot position
 }
 
-function pickCube(x,y,Cctx)//Removes cube at location
+function pickCube(cubeid)//Removes cube at location
 {
-	Cctx.clearRect(x-3,y-3,6,6);
+	Cctx.clearRect(distConvertX * obj.cubes[cubeid].x-3,distConvertY * obj.cubes[cubeid].y-3,6,6);
 }
 
 
@@ -49,5 +48,7 @@ var Cubectx = Cubecanvas.getContext("2d");
 var Mothercanvas = document.getElementById("Mmap");
 var Motherctx = Mothercanvas.getContext("2d");
 //All layers created
-
-//set up robot location
+//set up locations
+fillObstacles();
+fillCubes();
+drawMothership();

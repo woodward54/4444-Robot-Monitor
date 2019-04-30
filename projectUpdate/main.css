@@ -38,7 +38,6 @@ ul {
 .grid-item-map {
   grid-area: map;
   position: relative;
-  background-color: black;
 }
 .grid-item-us1 {
   grid-area: us1;
