@@ -33,7 +33,6 @@ var obj = {
 
 for (i=0; i<6; i++) {
   x = randomIntFromRange(0, ARENASIZE)
-  x = 5
   y = randomIntFromRange(0, ARENASIZE)
   obj.cubes.push(new cube(x, y, 'U', false))
 }
