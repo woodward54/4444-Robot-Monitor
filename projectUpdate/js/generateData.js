@@ -10,16 +10,16 @@ function randomFloatFromRange(min, max) {
   return Math.random() * (max - min) + min
 }
 
-function cube() {
-  x = 0
-  y = 0
-  name = 'U'
-  pickedUp = false
+function cube(x, y, name, pickedUp) {
+  this.x = x
+  this.y = y
+  this.name = name
+  this.pickedUp = pickedUp
 };
 
 function obstacle() {
-  x = 0
-  y = 0
+  this.x = x
+  this.y = y
 };
 
 var obj = {
@@ -33,6 +33,7 @@ var obj = {
 
 for (i=0; i<6; i++) {
   x = randomIntFromRange(0, ARENASIZE)
+  x = 5
   y = randomIntFromRange(0, ARENASIZE)
   obj.cubes.push(new cube(x, y, 'U', false))
 }
