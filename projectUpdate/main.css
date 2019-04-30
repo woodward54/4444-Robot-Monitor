@@ -313,9 +313,9 @@ ul {
 .MAP {
 	position: absolute;
 	top: 0px;
-	left: 12.5%;
-	height: 100%;
-	width: 75%;
+	left: 17.5%;
+	height: 400px;
+	width: 400px;
 	border-right: 2px solid white;
 	border-left: 2px solid white;
 }

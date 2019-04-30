@@ -1,14 +1,29 @@
-var distConvertX = Robocanvas.width/ARENASIZE;
-var distConvertY = Robocanvas.height/ARENASIZE;
+var Robocanvas = document.getElementById("Rmap");
+var Roboctx = Robocanvas.getContext("2d");
+
+var Obscanvas = document.getElementById("Omap");
+var Octx = Obscanvas.getContext("2d");
+
+var Cubecanvas = document.getElementById("Cmap");
+var Cubectx = Cubecanvas.getContext("2d");
+
+var Mothercanvas = document.getElementById("Mmap");
+var Motherctx = Mothercanvas.getContext("2d");
+
+var functest = 10;
+
 function fillObstacles(){
+	var i;
 	for(i=0;i<15;i++)
 	{
-		Octx.fillColor = "#FF0000";//set color to red
-		Octx.fillRect(i * 10 + 40,i * 10 + 40,6,6);//fill here
+		Octx.fillStyle = "#FF0000";//set color to red
+		var x = obj.obstacles[i].x;
+		var y = obj.obstacles[i].y;
+		Octx.fillRect(x,y,6,6);//fill here
 	}
 }
 
-function fillCubes(){
+/*function fillCubes(){
 	for(i=0;i<6;i++)
 	{
 		Cctx.fillColor = "#00FF00";//set color to green
@@ -36,19 +51,9 @@ function pickCube(cubeid)//Removes cube at location
 	Cctx.clearRect(distConvertX * obj.cubes[cubeid].x-3,distConvertY * obj.cubes[cubeid].y-3,6,6);
 }
 
-
+*/
 //start of main
-//Creat canvas objects
-var Robocanvas = document.getElementById("Rmap");
-var Roboctx = Robocanvas.getContext("2d");
-var Obscanvas = document.getElementById("Omap");
-var Obsctx = Obscanvas.getContext("2d");
-var Cubecanvas = document.getElementById("Cmap");
-var Cubectx = Cubecanvas.getContext("2d");
-var Mothercanvas = document.getElementById("Mmap");
-var Motherctx = Mothercanvas.getContext("2d");
-//All layers created
 //set up locations
 fillObstacles();
-fillCubes();
-drawMothership();
+//fillCubes();
+//drawMothership();

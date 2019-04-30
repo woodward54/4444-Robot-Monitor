@@ -1,4 +1,4 @@
-const ARENASIZE = 2048
+const ARENASIZE = 400
 
 
 function randomIntFromRange(min, max) {
@@ -24,7 +24,7 @@ function obstacle() {
 var obj = {
    speed: 0,
    ultraSonics: [0,0,0,0,0,0,0,0],
-
+   robotLocation: [ARENASIZE/2,ARENASIZE/2],
    cubes: [],
    obstacles: [],
    motherShip: [randomIntFromRange(0, ARENASIZE),randomIntFromRange(0, ARENASIZE)]
@@ -59,7 +59,7 @@ setInterval(function() {
     // speed up and down
     if (goingUp) {
       // meters per second
-      obj.speed += randomFloatFromRange(0.08, 0.12);
+      obj.speed += randomFloatFromRange(0.08, 0.12);//acceleration code
     } else {
       obj.speed -= randomFloatFromRange(0.08, 0.12)
     }
