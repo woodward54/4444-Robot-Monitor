@@ -1,4 +1,5 @@
 const ARENASIZE = 400
+const USMAX = 100
 
 
 function randomIntFromRange(min, max) {
@@ -23,7 +24,7 @@ function obstacle() {
 
 var obj = {
    speed: 0,
-   ultraSonics: [0,0,0,0,0,0,0,0],
+   ultraSonics: [USMAX,USMAX,USMAX,USMAX,USMAX,USMAX,USMAX,USMAX],
    robotLocation: [ARENASIZE/2,ARENASIZE/2],
    cubes: [],
    obstacles: [],
@@ -48,8 +49,9 @@ for (i=0; i<15; i++) {
   obj.obstacles.push(new obstacle(x, y))
 }
 
-goingUp = true;
-pause = 0;
+goingUp = true
+pause = 0
+usState = [0,0,0,0,0,0,0,0]
 
 setInterval(function() {
   // method to be executed;
@@ -88,12 +90,24 @@ setInterval(function() {
   // ultraSonics----------------------------------------
   for(i=0; i<obj.ultraSonics.length; i++) {
 
-    if (randomIntFromRange(0,10) == 9) {
+    if (randomIntFromRange(0,500) == 9 && usState[i] == 0) {
       // simulate object coming close
-
-      obj.ultraSonics[i] += 1
+      usState[i] = -1
+      obj.ultraSonics[i] -= randomIntFromRange(10,30)
     }
-    obj.ultraSonics[i] += 1
+
+    if (usState[i] == 1) {
+      obj.ultraSonics[i] += randomFloatFromRange(1,3)
+    } else if (usState[i] == -1) {
+      obj.ultraSonics[i] -= randomFloatFromRange(1,2)
+    }
+
+    if (obj.ultraSonics[i] >= USMAX) {
+      usState[i] = 0
+    }
+    if (obj.ultraSonics[i] <= 40) {
+      usState[i] = 1
+    }
   }
 
   sensors(obj.ultraSonics)
@@ -111,4 +125,4 @@ setInterval(function() {
     }
   }
 
-}, 200);
+}, 30);
