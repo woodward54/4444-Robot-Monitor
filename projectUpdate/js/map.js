@@ -15,22 +15,22 @@ function fillObstacles(){
 	Octx.fillStyle = "#FF0000";//select color
 	for(i=0;i<15;i++)
 	{
-		Octx.fillRect(obj.obstacles[i].x,obj.obstacles[i].y,6,6);//fill here
+		Octx.fillRect(obj.obstacles[i].x-3,obj.obstacles[i].y-3,6,6);//fill here
 	}
 }
 
-/*function fillCubes(){
+function fillCubes(){
 	Cctx.fillStyle = "#00FF00";//set color to green
 	Cctx.clearRect(0,0,Robocanvas.width,Robocanvas.height);
 	let i;
 	for(i=0;i<6;i++)
 	{
-		if(obj.cubes[i].pickedUp)
+		if(obj.cubes[i].pickedUp == false)
 		{
-			Cctx.fillRec(obj.cubes[i].x-3,obj.cubes[i].y-3,6,6);
+			Cctx.fillRect(obj.cubes[i].x-3,obj.cubes[i].y-3,6,6);
 		}
 	}
-}*/
+}
 
 function drawMothership(){
 	Mctx.fillStyle = "#00FFFF";//set color to teal
@@ -49,5 +49,5 @@ function Robotstep()
 //start of main
 //set up locations
 fillObstacles();
-//fillCubes();
+fillCubes();
 drawMothership();
