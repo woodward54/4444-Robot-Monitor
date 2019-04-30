@@ -12,27 +12,29 @@ var Motherctx = Mothercanvas.getContext("2d");
 
 function fillObstacles(){
 	let i;
-	//try{
 	Octx.fillStyle = "#FF0000";//select color
 	for(i=0;i<15;i++)
 	{
 		Octx.fillRect(obj.obstacles[i].x,obj.obstacles[i].y,6,6);//fill here
-		//window.alert();
 	}
-	//}catch(err){window.alert("obstacles painting error.");
 }
 
-/*function fillCubes(){
+function fillCubes(){
+	Cctx.fillColor = "#00FF00";//set color to green
+	Cctx.clearRect(0,0,Robocanvas.width,Robocanvas.height);
+	let i;
 	for(i=0;i<6;i++)
 	{
-		Cctx.fillColor = "#00FF00";//set color to green
-		Cctx.fillRec(distConvertX * obj.cubes[i].x-3,distConvertY * obj.cubes[i].y-3,6,6);
+		if(!obj.cubes[i].pickedUp)
+		{
+			Cctx.fillRec(obj.cubes[i].x-3,obj.cubes[i].y-3,6,6);
+		}
 	}
 }
 
 function drawMothership(){
 	Mctx.fillColor = "#00FFFF";//set color to teal
-	Mctx.fillRect(distConvertX * obj.motherShip[0]-6,obj.motherShip[1]-6,12,12);//fill rectangle
+	Mctx.fillRect(obj.motherShip[0]-6,obj.motherShip[1]-6,12,12);//fill rectangle
 }
 
 function Robotstep()
@@ -44,13 +46,6 @@ function Robotstep()
 	Rctx.rotate(Bear);//rotate to new robot bearing
 	Rctx.fillRect((Robocanvas.width/2)-5,(Robocanvas.height/2)-5,10,10);//fill in new robot position
 }
-
-function pickCube(cubeid)//Removes cube at location
-{
-	Cctx.clearRect(distConvertX * obj.cubes[cubeid].x-3,distConvertY * obj.cubes[cubeid].y-3,6,6);
-}
-
-*/
 //start of main
 //set up locations
 fillObstacles();
