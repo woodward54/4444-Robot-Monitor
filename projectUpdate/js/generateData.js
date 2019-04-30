@@ -1,5 +1,5 @@
 const ARENASIZE = 400
-const USMAX = 2
+const USMAX = 2.00
 
 
 function randomIntFromRange(min, max) {
