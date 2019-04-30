@@ -18,13 +18,5 @@ function removeClass(index, this_class)
 
 function highLight(letter)
 {
-  var tds = document.getElementById(letter)
-
-  for (let i = 0; i < tds.length; i++)
-  {
-  //	removeClass(tds[i], "highlight");
-  }
-
-  addClass(tds[index % 6], "highlight");
-  index++;
+  document.getElementById(letter).className = "highlight";
 }
