@@ -15,7 +15,10 @@ function fillObstacles(){
 	Octx.fillStyle = "#FF0000";//select color
 	for(i=0;i<15;i++)
 	{
-		Octx.fillRect(obj.obstacles[i].x-3,obj.obstacles[i].y-3,6,6);//fill here
+		Octx.beginPath();
+		Octx.arc(obj.obstacles[i].x,obj.obstacles[i].y, 4, 0, 2 * Math.PI);
+		Octx.fill();
+		//Octx.fillRect(obj.obstacles[i].x-3,obj.obstacles[i].y-3,6,6);//fill here
 	}
 }
 
