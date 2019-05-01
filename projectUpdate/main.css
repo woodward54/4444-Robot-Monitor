@@ -33,12 +33,12 @@ ul {
 }
 .grid-item-timer {
   grid-area: timer;
-  background-color: #3A3C3E;
+  /* background-color: #3A3C3E; */
 }
 .grid-item-map {
   grid-area: map;
   position: relative;
-  background-color: black;
+  /* background-color: #3A3C3E; */
 }
 .grid-item-us1 {
   grid-area: us1;
@@ -82,6 +82,62 @@ ul {
   grid-area: footer;
 }
 
+.grid-item-ip {
+  grid-area: ip;
+}
+.grid-item-port {
+  grid-area: port;
+}
+.grid-item-button {
+  grid-area: button;
+}
+.grid-item-button2 {
+  grid-area: button2;
+}
+
+input {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 10px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.3);
+  border: 3px solid #555;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 2rem;
+  font-family: helvetica, arial;
+  font-weight: 200;
+}
+
+input[type=text]:focus {
+  border: 3px solid #ccc;
+  color: rgba(255, 255, 255, 0.8)
+}
+
+button {
+  padding: 12px 20px;
+  margin: 8px 10px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.3);
+  border: 3px solid #555;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 2rem;
+  font-family: helvetica, arial;
+  font-weight: 200;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.5);
+  /* border: 3px solid #ccc; */
+}
+
 .grid-container {
   color: white;
   font-size: 2rem;
@@ -108,6 +164,23 @@ ul {
     "footer footer footer footer";
 }
 
+.grid-container-index {
+  color: white;
+  font-size: 2rem;
+  font-family: helvetica, arial;
+  font-weight: 200;
+  text-align: center;
+
+  display: grid;
+  grid-gap: 20% 1.25%;
+  grid-template-columns: 24% 24% 24% 24%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "ip ip port port"
+    ". button button2 .";
+}
+
 .grid-center {
   position: fixed;
   top: 50%;
@@ -118,7 +191,8 @@ ul {
   margin: auto;
   width: 95%;
   height: 90%;
-  border: 3px solid green;
+  border: 0px solid green;
+  background: rgba(58, 60, 62, 0.7);
   padding: 10px;
 }
 
