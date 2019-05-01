@@ -26,7 +26,7 @@ function obstacle() {
 var obj = {
    speed: 0,
    ultraSonics: [USMAX,USMAX,USMAX,USMAX,USMAX,USMAX,USMAX,USMAX],
-   robotLocation: [ARENASIZE/2,ARENASIZE/2],
+   robotLocation: [(ARENASIZE/2),(ARENASIZE/2)],
    cubes: [],
    obstacles: [],
    heading: 0,

@@ -37,18 +37,18 @@ function drawMothership(){
 	Mctx.fillRect(obj.motherShip[0]-15,obj.motherShip[1]-6,30,20);//fill rectangle
 }
 
-function Robotstep()
+function robotStep()
 {
 	Rctx.setTransform(1,0,0,1,0,0);//reset transformation
-	Rctx.clearRect(0,0,Robocanvas.width,Robocanvas.height);
+	Rctx.clearRect(0,0,ARENASIZE,ARENASIZE);//clear robot
 	Rctx.fillStyle = "#FFFFFF";//set color to white
-	Rctx.translate(x-(Robocanvas.width)/2,y-(Robocanvas.height/2));//move canvas half the distance, robot will be at the center of this
-	Rctx.rotate(Bear);//rotate to new robot bearing
-	Rctx.fillRect((Robocanvas.width/2)-5,(Robocanvas.height/2)-5,10,10);//fill in new robot position
+	Rctx.translate(obj.robotLocation[0]-(ARENASIZE/2),obj.robotLocation[1]-(ARENASIZE/2));//move canvas half the distance, robot will be at the center of this
+	Rctx.rotate(obj.heading);//rotate to new robot bearing
+	Rctx.fillRect((ARENASIZE/2)-5,(ARENASIZE/2)-5,10,10);//fill in new robot position
 }
 //start of main
 //set up locations
 fillObstacles();
-setInterval(fillCubes(),30);
 drawMothership();
-setInterval()
+setInterval(fillCubes,30);
+setInterval(robotStep,30);
