@@ -21,7 +21,7 @@ function fillObstacles(){
 
 function fillCubes(){
 	Cctx.fillStyle = "#00FF00";//set color to green
-	Cctx.clearRect(0,0,Robocanvas.width,Robocanvas.height);
+	Cctx.clearRect(0,0,ARENASIZE,ARENASIZE);
 	let i;
 	for(i=0;i<6;i++)
 	{
@@ -49,5 +49,6 @@ function Robotstep()
 //start of main
 //set up locations
 fillObstacles();
-fillCubes();
+setInterval(fillCubes(),30);
 drawMothership();
+setInterval()
