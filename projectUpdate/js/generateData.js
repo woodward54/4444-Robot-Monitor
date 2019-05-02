@@ -1,6 +1,7 @@
 const ARENASIZE = 400
 const USMAX = 2
 const PADDING = 25
+const MOVELENGTH = 100
 
 
 function randomIntFromRange(min, max) {
@@ -54,6 +55,47 @@ for (i=0; i<15; i++) {
 goingUp = true
 pause = 0
 usState = [0,0,0,0,0,0,0,0]
+moveCount = 0
+newDir = 10
+
+var getNewDirection = function() {
+  cont = true
+  count = 0
+
+  while (true) {
+    newDir = randomIntFromRange(0,3)
+    if (newDir == 0) {
+      // north
+      newX = obj.robotLocation[0]
+      newY = obj.robotLocation[1]+MOVELENGTH
+    } else if (newDir == 1) {
+      // east
+      newX = obj.robotLocation[0]+MOVELENGTH
+      newY = obj.robotLocation[1]
+    } else if (newDir == 2) {
+      // south
+      newX = obj.robotLocation[0]
+      newY = obj.robotLocation[1]-MOVELENGTH
+    } else {
+      // west
+      newX = obj.robotLocation[0]-MOVELENGTH
+      newY = obj.robotLocation[1]
+    }
+
+    if (newX<PADDING || newX>(ARENASIZE-PADDING) ||  newY<PADDING || newY>(ARENASIZE-PADDING)) {
+      // driving out of bounds
+      count++
+    } else {
+      break
+    }
+    if (count == 4) {
+      console.log("ERROR: Out of options to drive")
+      break
+    }
+  }
+
+  return newDir
+}
 
 setInterval(function() {
   // method to be executed;
@@ -76,10 +118,10 @@ setInterval(function() {
     }
     if (randomIntFromRange(0,10) > 8) {
       // pause for 3 secconds
-      console.log("Pausing...")
+      //console.log("Pausing...")
       if (randomIntFromRange(0,1) == 1) {
         // change direction
-        console.log("Change direction..")
+        //console.log("Change direction..")
         goingUp != goingUp
       }
       pause = 0
@@ -128,6 +170,33 @@ setInterval(function() {
       obj.cubes[choice].x = 0
       obj.cubes[choice].y = 0
       highLight(obj.cubes[choice].name)
+    }
+  }
+
+  // MOVE ROBOT ------------------------------------------
+
+
+
+  if (moveCount < MOVELENGTH && newDir < 6) {
+    if (newDir == 0) {
+      // north
+      obj.robotLocation[1]+=MOVELENGTH
+    } else if (newDir == 1) {
+      // east
+      obj.robotLocation[0]+=MOVELENGTH
+    } else if (newDir == 2) {
+      // south
+      obj.robotLocation[1]-=MOVELENGTH
+    } else {
+      // west
+      obj.robotLocation[0]-=MOVELENGTH
+    }
+    moveCount++
+  } else {
+    if (randomIntFromRange(0,300) == 11) {
+      console.log("Changing direction: ")
+      newDir = getNewDirection()
+      moveCount = 0
     }
   }
 
