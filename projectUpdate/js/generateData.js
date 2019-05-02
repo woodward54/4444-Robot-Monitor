@@ -1,7 +1,7 @@
 const ARENASIZE = 400
 const USMAX = 2
 const PADDING = 25
-const MOVELENGTH = 100
+const MOVELENGTH = 75
 
 
 function randomIntFromRange(min, max) {
@@ -147,6 +147,9 @@ setInterval(function() {
     }
 
     obj.ultraSonics[i] = Math.round(obj.ultraSonics[i] * 100) / 100;
+    // if (obj.ultraSonics[i] == 2) {
+    //   obj.ultraSonics[i] += .01
+    // }
 
     if (obj.ultraSonics[i] >= USMAX) {
       usState[i] = 0
@@ -154,8 +157,6 @@ setInterval(function() {
     if (obj.ultraSonics[i] <= 0.8) {
       usState[i] = 1
     }
-
-
   }
 
   sensors(obj.ultraSonics)
@@ -180,20 +181,20 @@ setInterval(function() {
   if (moveCount < MOVELENGTH && newDir < 6) {
     if (newDir == 0) {
       // north
-      obj.robotLocation[1]+=MOVELENGTH
+      obj.robotLocation[1]++
     } else if (newDir == 1) {
       // east
-      obj.robotLocation[0]+=MOVELENGTH
+      obj.robotLocation[0]++
     } else if (newDir == 2) {
       // south
-      obj.robotLocation[1]-=MOVELENGTH
+      obj.robotLocation[1]--
     } else {
       // west
-      obj.robotLocation[0]-=MOVELENGTH
+      obj.robotLocation[0]--
     }
     moveCount++
   } else {
-    if (randomIntFromRange(0,300) == 11) {
+    if (randomIntFromRange(0,150) == 11) {
       console.log("Changing direction: ")
       newDir = getNewDirection()
       moveCount = 0
