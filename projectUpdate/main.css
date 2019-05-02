@@ -18,6 +18,8 @@ ul {
   margin: 0px;
   padding: 5px 0 5px 20px;
 }
+
+
 /*#container {
   position: relative;
 }
@@ -84,8 +86,12 @@ ul {
 .grid-item-batt {
   grid-area: batt;
 }
+
 .grid-item-phase {
   grid-area: phase;
+}
+.batt {
+  background: red;
 }
 
 .grid-item-ip {

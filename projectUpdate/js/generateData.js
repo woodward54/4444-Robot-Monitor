@@ -57,6 +57,9 @@ pause = 0
 usState = [0,0,0,0,0,0,0,0]
 moveCount = 0
 newDir = 10
+battTime = 0
+battPercent = 100
+phaseCount = 0
 
 var getNewDirection = function() {
   cont = true
@@ -204,7 +207,7 @@ setInterval(function() {
   }
   document.getElementById("speed").innerHTML = obj.speed.toFixed(3).concat("m/s");//pushes to html doc
 
-  // BATT ------------------------------------------------------------------
+  // BATT-PHASE ------------------------------------------------------------------
   if (battTime % 100 == 0) {
     if (battPercent == 0) {
       battPercent = 100
@@ -213,10 +216,13 @@ setInterval(function() {
     document.getElementById("battProgress").value = battPercent
   }
 
-  if (battTime % 1000 == 0) {
-    
+  if (battTime % 500 == 0) {
+    phaseCount++
+    phase = "Phase" + phaseCount
     document.getElementById("phase").innerHTML = phase
   }
 
 
+
+  battTime++
 }, 30);
