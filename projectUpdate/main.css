@@ -42,35 +42,35 @@ ul {
 }
 .grid-item-us1 {
   grid-area: us1;
-  background-color: blue;
+  /* background-color: blue; */
 }
 .grid-item-us2 {
   grid-area: us2;
-  background-color: blue;
+  /* background-color: blue; */
 }
 .grid-item-us3 {
   grid-area: us3;
-  background-color: blue;
+  /* background-color: blue; */
 }
 .grid-item-us4 {
   grid-area: us4;
-  background-color: blue;
+  /* background-color: blue; */
 }
 .grid-item-us5 {
   grid-area: us5;
-  background-color: blue;
+  /* background-color: blue; */
 }
 .grid-item-us6 {
   grid-area: us6;
-  background-color: blue;
+  /* background-color: blue; */
 }
 .grid-item-us7 {
   grid-area: us7;
-  background-color: blue;
+  /* background-color: blue; */
 }
 .grid-item-lidar {
   grid-area: lidar;
-  background-color: blue;
+  /* background-color: blue; */
 }
 .grid-item-speed {
   grid-area: speed;
@@ -80,6 +80,12 @@ ul {
 }
 .grid-item-footer {
   grid-area: footer;
+}
+.grid-item-batt {
+  grid-area: batt;
+}
+.grid-item-phase {
+  grid-area: phase;
 }
 
 .grid-item-ip {
@@ -146,7 +152,7 @@ button:hover {
   text-align: center;
 
   display: grid;
-  grid-gap: 3% 1.25%;
+  grid-gap: 6% 1.25%;
   grid-template-columns: 24% 24% 24% 24%;
   grid-template-rows: auto;
   grid-template-areas:
@@ -160,7 +166,7 @@ button:hover {
     "map map us6 us6"
     "map map us7 us7"
     "map map lidar lidar"
-    "speed blocks . ."
+    "speed blocks batt phase"
     "footer footer footer footer";
 }
 

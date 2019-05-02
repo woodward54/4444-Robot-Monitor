@@ -101,32 +101,33 @@ setInterval(function() {
   // method to be executed;
 
   // speeds----------------------------------------
-  if (pause > 10) {
-    // speed up and down
-    if (goingUp) {
-      // meters per second
-      obj.speed += randomFloatFromRange(0.08, 0.12);//acceleration code
-    } else {
-      obj.speed -= randomFloatFromRange(0.08, 0.12)
-    }
-	document.getElementById("speed").innerHTML = obj.speed.toFixed(3).concat("m/s");//pushes to html doc
-    if (obj.speed >= 1.0) {
-      goingUp = false
-    }
-    if (obj.speed <= 0) {
-      goingUp = true
-    }
-    if (randomIntFromRange(0,10) > 8) {
-      // pause for 3 secconds
-      //console.log("Pausing...")
-      if (randomIntFromRange(0,1) == 1) {
-        // change direction
-        //console.log("Change direction..")
-        goingUp != goingUp
-      }
-      pause = 0
-    }
-  }
+  // if (pause > 10) {
+  //   // speed up and down
+  //   if (goingUp) {
+  //     // meters per second
+  //     obj.speed += randomFloatFromRange(0.08, 0.12);//acceleration code
+  //   } else {
+  //     obj.speed -= randomFloatFromRange(0.08, 0.12)
+  //   }
+	//    document.getElementById("speed").innerHTML = obj.speed.toFixed(3).concat("m/s");//pushes to html doc
+  //   if (obj.speed >= 1.0) {
+  //     goingUp = false
+  //   }
+  //   if (obj.speed <= 0) {
+  //     goingUp = true
+  //   }
+  //   if (randomIntFromRange(0,10) > 8) {
+  //     // pause for 3 secconds
+  //     //console.log("Pausing...")
+  //     if (randomIntFromRange(0,1) == 1) {
+  //       // change direction
+  //       //console.log("Change direction..")
+  //       goingUp != goingUp
+  //     }
+  //     pause = 0
+  //   }
+  // }
+
 
   //console.log("Speed: " + obj.speed.toFixed(3))
   pause++
@@ -175,9 +176,6 @@ setInterval(function() {
   }
 
   // MOVE ROBOT ------------------------------------------
-
-
-
   if (moveCount < MOVELENGTH && newDir < 6) {
     if (newDir == 0) {
       // north
@@ -193,12 +191,32 @@ setInterval(function() {
       obj.robotLocation[0]--
     }
     moveCount++
+
   } else {
     if (randomIntFromRange(0,150) == 11) {
       console.log("Changing direction: ")
       newDir = getNewDirection()
       moveCount = 0
+      obj.speed = randomFloatFromRange(0.2, 0.9)
+    } else {
+      obj.speed = 0
     }
   }
+  document.getElementById("speed").innerHTML = obj.speed.toFixed(3).concat("m/s");//pushes to html doc
+
+  // BATT ------------------------------------------------------------------
+  if (battTime % 100 == 0) {
+    if (battPercent == 0) {
+      battPercent = 100
+    }
+    battPercent--
+    document.getElementById("battProgress").value = battPercent
+  }
+
+  if (battTime % 1000 == 0) {
+    
+    document.getElementById("phase").innerHTML = phase
+  }
+
 
 }, 30);
